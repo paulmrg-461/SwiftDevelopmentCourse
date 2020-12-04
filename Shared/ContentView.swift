@@ -34,6 +34,13 @@ var ageToBeUsed = userAge ?? defaultAge
 //Rangos
 let names = ["Paul", "Jimmy","Diana"]
 
+//Logic operators
+let allowEntry = false
+
+//OPERADOR AND
+let enterDoorCode = true
+let passRetinaScan = false
+
 struct ContentView: View {
     var body: some View {
         Text("Hello World").padding()
@@ -87,3 +94,18 @@ func getDinamycRankInArray() -> Void {
         print(name)
     }
 }
+
+func getAllowEntry() -> Void {
+    if !allowEntry {
+        print("DENIED ACCESS")
+    }
+}
+
+func getAllowEntryWithRetina() -> Void {
+    if enterDoorCode && passRetinaScan {
+        print("Hello \(name), bienvenido a EvilCorp")
+    } else {
+        print("Denied Access")
+    }
+}
+
