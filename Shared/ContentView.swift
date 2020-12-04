@@ -25,6 +25,12 @@ let contentHeight = 50
 var hasImage = true
 var rowHeight = 0
 
+//Nil Coalescing Operator
+let defaultAge = 18
+var userAge: Int?
+var ageToBeUsed = userAge ?? defaultAge
+//ageToBeUsed = (userAge != nil ? userAge! : defaultAge)
+
 struct ContentView: View {
     var body: some View {
         Text("Hello World").padding()
