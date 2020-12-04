@@ -19,14 +19,15 @@ let (x,y) = (1,2)
 //9%4 //r
 //9 == 4*2+1 //true
 
-
-let name = "Paul Realpe"
+let (age, name) = (24, "Paul Realpe")
 
 struct ContentView: View {
     var body: some View {
-        if name == "Paul Realpe" {
+        if (age, name) < (31, "Juan Gabriel Gomila") {
         Text("Hola \(name), el resultado de la suma de 5 + 10 es = \(a+b)")
             .padding()
+        } else {
+            Text("La comparacion de las tuplas no se cumple")
         }
     }
 }
