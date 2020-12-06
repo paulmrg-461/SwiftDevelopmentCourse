@@ -32,6 +32,10 @@ let nameChars : [Character] = ["P","a","u","l"]
 var nameString = String(nameChars)
 //nameString.append(exclamationMark)
 
+//Indices in string
+//name[name.startIndex]
+//name[name.index(before: name.endIndex)]
+
 struct ContentView: View {
     var body: some View {
         Text("\(multicodeString)... \n\(wiseWords). \(colombia)").padding()
