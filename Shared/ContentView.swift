@@ -25,7 +25,7 @@ let colombia = "\u{1F1E8}\u{1F1F4}"
 var emptyString = ""
 var anotherEmptyString = String()
 
-let name = "Paul Realpe"
+let name = "Paul Realpe, Age 24"
 let exclamationMark : Character = "!"
 
 let nameChars : [Character] = ["P","a","u","l"]
@@ -35,6 +35,10 @@ var nameString = String(nameChars)
 //Indices in string
 //name[name.startIndex]
 //name[name.index(before: name.endIndex)]
+
+let index = name.firstIndex(of: ",") ?? name.endIndex
+let firsPart = name[..<index]
+let newString = String(firsPart)
 
 struct ContentView: View {
     var body: some View {
