@@ -21,6 +21,10 @@ let blackHeart = "\u{2665}"
 let heart = "\u{1F496}"
 let colombia = "\u{1F1E8}\u{1F1F4}"
 
+//Declarar variables de tipo string vacias para posteriormente inicializarlas
+var emptyString = ""
+var anotherEmptyString = String()
+
 struct ContentView: View {
     var body: some View {
         Text("\(multicodeString)... \n\(wiseWords). \(colombia)").padding()
