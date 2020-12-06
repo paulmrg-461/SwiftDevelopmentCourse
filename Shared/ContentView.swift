@@ -30,15 +30,10 @@ let exclamationMark : Character = "!"
 
 let nameChars : [Character] = ["P","a","u","l"]
 var nameString = String(nameChars)
-//nameString.append(exclamationMark)
 
-//Indices in string
-//name[name.startIndex]
-//name[name.index(before: name.endIndex)]
-
-let index = name.firstIndex(of: ",") ?? name.endIndex
-let firsPart = name[..<index]
-let newString = String(firsPart)
+let newGreeting = "Hello friends, I'm Paul Realpe"
+newGreeting.hasPrefix("Hello")
+newGreeting.hasSuffix("Realpe")
 
 struct ContentView: View {
     var body: some View {
