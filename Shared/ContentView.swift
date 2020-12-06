@@ -25,6 +25,13 @@ let colombia = "\u{1F1E8}\u{1F1F4}"
 var emptyString = ""
 var anotherEmptyString = String()
 
+let name = "Paul Realpe"
+let exclamationMark : Character = "!"
+
+let nameChars : [Character] = ["P","a","u","l"]
+var nameString = String(nameChars)
+//nameString.append(exclamationMark)
+
 struct ContentView: View {
     var body: some View {
         Text("\(multicodeString)... \n\(wiseWords). \(colombia)").padding()
@@ -34,6 +41,12 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+func StringToChar() -> Void {
+    for character in name {
+        print(character)
     }
 }
 
