@@ -61,4 +61,13 @@ func repeatArrayElements() -> Void {
     let peeper = shoppingList.remove(at: 1)
     //Eliminar el ultimo elemento del array
     shoppingList.removeLast()
+    
+    //Iterar en un array
+    for item in shoppingList {
+        print(item)
+    }
+    
+    for (idx, item) in shoppingList.enumerated() {
+        print("Item \(idx+1). \(item)")
+    }
 }
