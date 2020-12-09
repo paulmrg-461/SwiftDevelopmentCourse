@@ -19,27 +19,27 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func setElements() -> Void {
-    var letters = Set<Character>()
-    letters.count
-    letters.insert("P")
-    letters.insert("a")
-    letters.insert("u")
-    letters.insert("l")
+func OperationsOnSets() -> Void {
+    let oddDigits: Set = [1,3,5,7,9]
+    let evenDigits: Set = [0,2,4,6,8]
+    let primeDigits: Set = [2,3,5,7]
     
-    var favoriteGames : Set<String> = ["GTA 5", "Fifa 21", "Road Redemption", "Gears of War 5", "Watch Dogs 2"]
-    favoriteGames.isEmpty ? print("You don't have favorite games.") : print("You have favorite games.")
+    // oddDigits union evenDigits
+    print("oddDigits union evenDigits: \(oddDigits.union(evenDigits).sorted())")
+    // oddDigits intersection primeDigits
+    print("oddDigits intersection primeDigits: \(oddDigits.intersection(primeDigits).sorted())")
+    // evenDigits symmetric diference primeDigits
+    print("evenDigits symmetric diference primeDigits: \(evenDigits.symmetricDifference(primeDigits).sorted())")
+    // oddDigits subtracting primeDigits
+    print("OddDigits subtracting primeDigits: \(oddDigits.subtracting(primeDigits))")
     
-    //let deletedGame = favoriteGames.remove("Watch Dogs 2") ? print("You have deleted \(deletedGame)") : print("The game could not be deleted")
-    if let removedGame = favoriteGames.remove("Watch Dogs 2"){
-        print("You have deleted \(removedGame)")
-    }
-    
-    var deletedGame : String?
-    
-    favoriteGames.contains("Road Redemption") ? deletedGame = favoriteGames.remove("Road Redemption") : print("The game does not appear in the set")
-    
-    for vg in favoriteGames.sorted() {
-        print(vg)
-    }
+    let houseAnimals: Set = ["😹", "🐶"]
+    let farmAnimals: Set = ["🐮", "🐔", "🐑", "🐶", "😹"]
+    let cityAnimals: Set = ["🐁", "🕊"]
+    //Animales de hogar es subconjunto de animales de granja
+    houseAnimals.isSubset(of: farmAnimals)
+    //Animales de granja es un superconjunto que contiene los animales de hogar
+    farmAnimals.isSuperset(of: houseAnimals)
+    //A y B son disjuntos si su interseccion es vacia
+    farmAnimals.isDisjoint(with: cityAnimals)
 }
