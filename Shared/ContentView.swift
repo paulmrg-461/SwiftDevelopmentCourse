@@ -43,4 +43,22 @@ func repeatArrayElements() -> Void {
     
     var shoppingList : [String] = ["Papas", "Pimiento", "Tortillas", "Cerdo"]
     shoppingList.count
+    
+    //Conocer si la lista de compras esta vacia
+    shoppingList.isEmpty ? print("The shopping list is empty.") : print("The shopping list has elements")
+    
+    shoppingList.append("Coca Cola")
+    
+    // Agregar uno o mas elementos al array
+    shoppingList += ["Totopos", "Pico de gallo", "Guacamole", "Cebolla"]
+    //Consultar la primera posicion del array
+    var firstElement = shoppingList[0]
+    //Reemplazar la posicion 0 por un nuevo elemento
+    shoppingList[0] = "Huevos"
+    //Reemplazar varios elementos mediante un rango
+    shoppingList[4...6] = ["Naranja", "Platano", "Mango"]
+    //Eliminar elemento en posicion especifica
+    let peeper = shoppingList.remove(at: 1)
+    //Eliminar el ultimo elemento del array
+    shoppingList.removeLast()
 }
