@@ -7,37 +7,9 @@
 
 import SwiftUI
 
-let someString = "I'm an any String"
-let multicodeString = """
-My name is Paul Realpe, I'm systems engineer.
-I'm 24 years old, I love the mobile development,
-My skills are Java, Kotlin, Flutter, React.js, HTML, CSS, JS
-"""
-
-let wiseWords = "\"The imagination is more important than knowledge\" - Albert Einstein"
-
-let dolarSign = "\u{24}"
-let blackHeart = "\u{2665}"
-let heart = "\u{1F496}"
-let colombia = "\u{1F1E8}\u{1F1F4}"
-
-//Declarar variables de tipo string vacias para posteriormente inicializarlas
-var emptyString = ""
-var anotherEmptyString = String()
-
-let name = "Paul Realpe, Age 24"
-let exclamationMark : Character = "!"
-
-let nameChars : [Character] = ["P","a","u","l"]
-var nameString = String(nameChars)
-
-let newGreeting = "Hello friends, I'm Paul Realpe"
-newGreeting.hasPrefix("Hello")
-newGreeting.hasSuffix("Realpe")
-
 struct ContentView: View {
     var body: some View {
-        Text("\(multicodeString)... \n\(wiseWords). \(colombia)").padding()
+        Text("Que le digo a ?").padding()
     }
 }
 
@@ -47,9 +19,28 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func StringToChar() -> Void {
-    for character in name {
-        print(character)
-    }
+func addArrayElements() -> Void {
+    //Arrays
+    //Dictionaries
+    //Set
+    var someInts = [Int]()
+    someInts.append(24)
+    someInts.append(18)
+    someInts.count
+    //Vaciar elementos del array
+    someInts = []
 }
 
+func repeatArrayElements() -> Void {
+    //Repetir el elemento 3.14... 7 veces
+    let someDoubles = Array(repeating: 3.141592, count: 7)
+    someDoubles.count
+    let moreDoubles = Array(repeating: 2.5, count: 3)
+    moreDoubles.count
+    //Union de varios objetos de tipo array
+    let aLotOfDoubles = someDoubles + moreDoubles
+    aLotOfDoubles.count
+    
+    var shoppingList : [String] = ["Papas", "Pimiento", "Tortillas", "Cerdo"]
+    shoppingList.count
+}
