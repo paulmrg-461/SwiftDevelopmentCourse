@@ -19,55 +19,27 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func addArrayElements() -> Void {
-    //Arrays
-    //Dictionaries
-    //Set
-    var someInts = [Int]()
-    someInts.append(24)
-    someInts.append(18)
-    someInts.count
-    //Vaciar elementos del array
-    someInts = []
-}
-
-func repeatArrayElements() -> Void {
-    //Repetir el elemento 3.14... 7 veces
-    let someDoubles = Array(repeating: 3.141592, count: 7)
-    someDoubles.count
-    let moreDoubles = Array(repeating: 2.5, count: 3)
-    moreDoubles.count
-    //Union de varios objetos de tipo array
-    let aLotOfDoubles = someDoubles + moreDoubles
-    aLotOfDoubles.count
+func setElements() -> Void {
+    var letters = Set<Character>()
+    letters.count
+    letters.insert("P")
+    letters.insert("a")
+    letters.insert("u")
+    letters.insert("l")
     
-    var shoppingList : [String] = ["Papas", "Pimiento", "Tortillas", "Cerdo"]
-    shoppingList.count
+    var favoriteGames : Set<String> = ["GTA 5", "Fifa 21", "Road Redemption", "Gears of War 5", "Watch Dogs 2"]
+    favoriteGames.isEmpty ? print("You don't have favorite games.") : print("You have favorite games.")
     
-    //Conocer si la lista de compras esta vacia
-    shoppingList.isEmpty ? print("The shopping list is empty.") : print("The shopping list has elements")
-    
-    shoppingList.append("Coca Cola")
-    
-    // Agregar uno o mas elementos al array
-    shoppingList += ["Totopos", "Pico de gallo", "Guacamole", "Cebolla"]
-    //Consultar la primera posicion del array
-    var firstElement = shoppingList[0]
-    //Reemplazar la posicion 0 por un nuevo elemento
-    shoppingList[0] = "Huevos"
-    //Reemplazar varios elementos mediante un rango
-    shoppingList[4...6] = ["Naranja", "Platano", "Mango"]
-    //Eliminar elemento en posicion especifica
-    let peeper = shoppingList.remove(at: 1)
-    //Eliminar el ultimo elemento del array
-    shoppingList.removeLast()
-    
-    //Iterar en un array
-    for item in shoppingList {
-        print(item)
+    //let deletedGame = favoriteGames.remove("Watch Dogs 2") ? print("You have deleted \(deletedGame)") : print("The game could not be deleted")
+    if let removedGame = favoriteGames.remove("Watch Dogs 2"){
+        print("You have deleted \(removedGame)")
     }
     
-    for (idx, item) in shoppingList.enumerated() {
-        print("Item \(idx+1). \(item)")
+    var deletedGame : String?
+    
+    favoriteGames.contains("Road Redemption") ? deletedGame = favoriteGames.remove("Road Redemption") : print("The game does not appear in the set")
+    
+    for vg in favoriteGames.sorted() {
+        print(vg)
     }
 }
