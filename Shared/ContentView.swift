@@ -19,27 +19,39 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func OperationsOnSets() -> Void {
-    let oddDigits: Set = [1,3,5,7,9]
-    let evenDigits: Set = [0,2,4,6,8]
-    let primeDigits: Set = [2,3,5,7]
+func Dictionaries() -> Void {
+    //Declarar diccionario
+    var namesOfIntegers = [Int : String]()
+    //Agregar un elemento en la llave
+    namesOfIntegers[0] = "Zero"
+    namesOfIntegers[1] = "One"
+    namesOfIntegers[2] = "Two"
+    //Limpiar diccionario
+    namesOfIntegers = [:]
     
-    // oddDigits union evenDigits
-    print("oddDigits union evenDigits: \(oddDigits.union(evenDigits).sorted())")
-    // oddDigits intersection primeDigits
-    print("oddDigits intersection primeDigits: \(oddDigits.intersection(primeDigits).sorted())")
-    // evenDigits symmetric diference primeDigits
-    print("evenDigits symmetric diference primeDigits: \(evenDigits.symmetricDifference(primeDigits).sorted())")
-    // oddDigits subtracting primeDigits
-    print("OddDigits subtracting primeDigits: \(oddDigits.subtracting(primeDigits))")
+    var airports: [String : String] = ["YYZ": "Toronto", "DUB": "Dublin", "PMI": "Palma de Mallorca",]
+    print(airports)
+    airports.count
+    airports.isEmpty
+    airports["LHR"] = "London City Airport"
+    airports["LHR"] = "London Heathrow"
     
-    let houseAnimals: Set = ["😹", "🐶"]
-    let farmAnimals: Set = ["🐮", "🐔", "🐑", "🐶", "😹"]
-    let cityAnimals: Set = ["🐁", "🕊"]
-    //Animales de hogar es subconjunto de animales de granja
-    houseAnimals.isSubset(of: farmAnimals)
-    //Animales de granja es un superconjunto que contiene los animales de hogar
-    farmAnimals.isSuperset(of: houseAnimals)
-    //A y B son disjuntos si su interseccion es vacia
-    farmAnimals.isDisjoint(with: cityAnimals)
+    if let oldValue = airports.updateValue("Dublin Airport", forKey: "DUB"){
+        print("El nombre anterior del aeropuerto es: \(oldValue)")
+    }
+    
+    //Eliminar elemento con la clave
+    airports["PMI"] = nil
+    
+    if let removedAirport = airports.removeValue(forKey: "DUB"){
+        print("The airport deleted was: \(removedAirport)")
+    }
+    
+    var family : [String : Int] = ["Samuel": 60, "Blanca": 59, "Diana": 35, "Jimmy": 33, "Paul": 24]
+    family["Sara"] = 14
+    family["Mariana"] = 7
+    
+    for f in family {
+        print(f)
+    }
 }
