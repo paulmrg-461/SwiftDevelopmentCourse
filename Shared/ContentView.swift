@@ -51,7 +51,20 @@ func Dictionaries() -> Void {
     family["Sara"] = 14
     family["Mariana"] = 7
     
-    for f in family {
-        print(f)
+    for (key, value) in family {
+        print("\(key) - \(value)")
     }
+    
+    for familyKey in family.keys {
+        print(familyKey)
+    }
+    
+    for familyValue in family.values {
+        print(familyValue)
+    }
+    
+    //Guardar las llaves del diccionario en un Array
+    let familyKeys = [String](family.keys)
+    //Guardar los valores del diccionario en un Array
+    let familyValues = [Int](family.values)
 }
