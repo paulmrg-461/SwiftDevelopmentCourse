@@ -19,42 +19,32 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func forIn() -> Void {
-    let names = ["Paul", "Andrea", "Diana", "Jimmy"]
-    
-    for name in names {
-        print("Good morning \(name)")
+func whileConditions() -> Void {
+    var i = 0
+    while i <= 10 {
+        i += 1
     }
+    print(i)
     
-    let animals = ["Spider": 8, "Snake": 0, "Ant": 6, "Dog": 4]
-    
-    for (animalName, legs) in animals {
-        print("The animal \(animalName), has \(legs) legs.")
+    repeat {
+        i += 1
+    } while i <= 10
+    print(i)
+}
+
+func findPrimeNumbers() -> Void {
+    for idx in 2...100 {
+        var prime = true
+        var min = 2
+        while min < idx {
+            if idx % min == 0{
+                prime = false
+                break
+            }
+            min += 1
+        }
+        prime ? print("\(idx) is prime     ✅") : print("\(idx) is not prime ❌")
     }
-    
-    for idx in 1...9 {
-        print("The multiplication of \(idx) x 9 = \(idx * 9)")
-    }
-    
-    let base = 3
-    let power = 5
-    var answer = 1
-    
-    for idx in 1...power {
-        print("\(idx) power \(power) = \(answer *= base) ")
-    }
-    
-    for _ in 0..<power {
-        answer *= base
-        print(answer)
-    }
-    
-    let hour = 7
-    let minutes = 60
-    let minuteInterval = 5
-    
-    for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
-        print("\(hour) : \(tickMark)")
-    }
+
 }
 
