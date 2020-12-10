@@ -19,52 +19,42 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func Dictionaries() -> Void {
-    //Declarar diccionario
-    var namesOfIntegers = [Int : String]()
-    //Agregar un elemento en la llave
-    namesOfIntegers[0] = "Zero"
-    namesOfIntegers[1] = "One"
-    namesOfIntegers[2] = "Two"
-    //Limpiar diccionario
-    namesOfIntegers = [:]
+func forIn() -> Void {
+    let names = ["Paul", "Andrea", "Diana", "Jimmy"]
     
-    var airports: [String : String] = ["YYZ": "Toronto", "DUB": "Dublin", "PMI": "Palma de Mallorca",]
-    print(airports)
-    airports.count
-    airports.isEmpty
-    airports["LHR"] = "London City Airport"
-    airports["LHR"] = "London Heathrow"
-    
-    if let oldValue = airports.updateValue("Dublin Airport", forKey: "DUB"){
-        print("El nombre anterior del aeropuerto es: \(oldValue)")
+    for name in names {
+        print("Good morning \(name)")
     }
     
-    //Eliminar elemento con la clave
-    airports["PMI"] = nil
+    let animals = ["Spider": 8, "Snake": 0, "Ant": 6, "Dog": 4]
     
-    if let removedAirport = airports.removeValue(forKey: "DUB"){
-        print("The airport deleted was: \(removedAirport)")
+    for (animalName, legs) in animals {
+        print("The animal \(animalName), has \(legs) legs.")
     }
     
-    var family : [String : Int] = ["Samuel": 60, "Blanca": 59, "Diana": 35, "Jimmy": 33, "Paul": 24]
-    family["Sara"] = 14
-    family["Mariana"] = 7
-    
-    for (key, value) in family {
-        print("\(key) - \(value)")
+    for idx in 1...9 {
+        print("The multiplication of \(idx) x 9 = \(idx * 9)")
     }
     
-    for familyKey in family.keys {
-        print(familyKey)
+    let base = 3
+    let power = 5
+    var answer = 1
+    
+    for idx in 1...power {
+        print("\(idx) power \(power) = \(answer *= base) ")
     }
     
-    for familyValue in family.values {
-        print(familyValue)
+    for _ in 0..<power {
+        answer *= base
+        print(answer)
     }
     
-    //Guardar las llaves del diccionario en un Array
-    let familyKeys = [String](family.keys)
-    //Guardar los valores del diccionario en un Array
-    let familyValues = [Int](family.values)
+    let hour = 7
+    let minutes = 60
+    let minuteInterval = 5
+    
+    for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
+        print("\(hour) : \(tickMark)")
+    }
 }
+
