@@ -42,4 +42,26 @@ func switchInterval() -> Void {
     print("\(naturalCount) \(phrase)")
 }
 
+func switchTuplas() -> Void {
+    let somePoint = (1,1)
+
+    switch somePoint {
+        case (0,0):
+            print("El punto \(somePoint) es el origen de coordenadas.")
+        case (_,0):
+            print("El punto \(somePoint) se encuentra sobre el eje X.")
+        case (0,_):
+            print("El punto \(somePoint) se encuentra sobre el eje Y.")
+        case (-2...2, -2...2):
+            print("El punto \(somePoint) se encuentra en el interior del cuadrado de lado 4.")
+        //Recuperar el valor de los elementos de las tuplas
+        case (let x, 0):
+                print("Sobre el eje X, con valor \(x)")
+        case let (x,y) where x==y:
+            print("El punto se encuentra sobre la recta x = y")
+        default:
+            print("El punto \(somePoint) no se encuentra en las coordenadas")
+    }
+}
+
 
