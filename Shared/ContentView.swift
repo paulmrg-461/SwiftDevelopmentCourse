@@ -19,39 +19,27 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func whileConditions() -> Void {
-    var i = 0
-    while i <= 10 {
-        i += 1
+func switchInterval() -> Void {
+    let moons = 90
+    let naturalCount: String
+    let phrase = "Lunas en Saturno"
+
+    switch moons {
+        case 0:
+            naturalCount = "No hay"
+        case 1..<5:
+            naturalCount = "Hay unas pocas"
+        case 5..<12:
+            naturalCount = "Hay bastantes"
+        case 12..<100:
+            naturalCount = "Hay decenas de"
+        case 100..<1000:
+            naturalCount = "Hay centenares de"
+        default:
+            naturalCount = "Hay muchisisisisisisiiimas"
     }
-    print(i)
     
-    repeat {
-        i += 1
-    } while i <= 10
-    print(i)
+    print("\(naturalCount) \(phrase)")
 }
 
-func ifElseSentence() -> Void {
-    var temp = 13
-    temp < 15 ? print("La temperatura es: \(temp) - Encendiendo la calefaccion") : print("La temperatura es: \(temp) - Apagando la calefaccion")
-}
-
-func ifElse() -> Void {
-    var money = 10
-    print("La boleta para el concierto cuesta $\(money) dolares.")
-
-    money <= 50 ? giveMoney(var: money) : print("Es demasiado caro... no pienso ingresar")
-
-}
-
-func giveMoney(var money: Int) -> Void {
-    if money <= 10 {
-        print("Excelente precio, por favor dame 3 boletas de $\(money) dolares.")
-    }else if money <= 20 {
-        print("Solamente dame 2 boletas de $\(money) dolares.")
-    }else if money <= 50{
-        print("Es demasiado caro, solamente dame 1 boleta de $\(money) dolares.")
-    }
-}
 
