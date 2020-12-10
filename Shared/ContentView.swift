@@ -32,19 +32,26 @@ func whileConditions() -> Void {
     print(i)
 }
 
-func findPrimeNumbers() -> Void {
-    for idx in 2...100 {
-        var prime = true
-        var min = 2
-        while min < idx {
-            if idx % min == 0{
-                prime = false
-                break
-            }
-            min += 1
-        }
-        prime ? print("\(idx) is prime     ✅") : print("\(idx) is not prime ❌")
-    }
+func ifElseSentence() -> Void {
+    var temp = 13
+    temp < 15 ? print("La temperatura es: \(temp) - Encendiendo la calefaccion") : print("La temperatura es: \(temp) - Apagando la calefaccion")
+}
 
+func ifElse() -> Void {
+    var money = 10
+    print("La boleta para el concierto cuesta $\(money) dolares.")
+
+    money <= 50 ? giveMoney(var: money) : print("Es demasiado caro... no pienso ingresar")
+
+}
+
+func giveMoney(var money: Int) -> Void {
+    if money <= 10 {
+        print("Excelente precio, por favor dame 3 boletas de $\(money) dolares.")
+    }else if money <= 20 {
+        print("Solamente dame 2 boletas de $\(money) dolares.")
+    }else if money <= 50{
+        print("Es demasiado caro, solamente dame 1 boleta de $\(money) dolares.")
+    }
 }
 
