@@ -19,24 +19,13 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func guardLetSentence() -> Void {
-    var people = ["Name": "Paul Realpe", "Age": 24, "IsMale": true ] as [String : Any]
-
-    func testUserValidation(person: [String : Any]) {
-        guard let surname = person["surname"] else {
-            print("El nombre es desconocido")
-            return
-        }
-        print(surname)
-        
-        guard let age = person["Age"] else {
-            print("La edad es desconocida")
-            return
-        }
-        print("La edad de la persona es \(age)")
+func checkOSVersion() -> Void {
+    if #available(iOS 12, macOS 10.12, *) {
+        //Ejecutar las acciones a los iOS12+, a los macOS12+
+    }else {
+        //Mantener el codigo viejo con versiones anteriores de iOS, macOS...
     }
-    people["surname"] = "Realpe"
-    testUserValidation(person: people)
+
 }
 
 
