@@ -19,46 +19,24 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func continueSentence() -> Void {
-    let sentence = "Las mentes grandes piensan igual."
-    var filteredSentence = ""
-    let charactersToRemove:[Character] = ["a","e","i","o","u"]
-    for ch in sentence {
-        if charactersToRemove.contains(ch){
-            continue
-        }
-        filteredSentence.append(ch)
-    }
-    print(filteredSentence)
-}
+func guardLetSentence() -> Void {
+    var people = ["Name": "Paul Realpe", "Age": 24, "IsMale": true ] as [String : Any]
 
-func breakSentence() -> Void {
-    let sentence = "Las mentes grandes piensan igual."
-    var filteredSentence = ""
-    let charactersToRemove:[Character] = ["a","e","i","o","u"]
-    for ch in sentence {
-        if charactersToRemove.contains(ch){
-            continue
+    func testUserValidation(person: [String : Any]) {
+        guard let surname = person["surname"] else {
+            print("El nombre es desconocido")
+            return
         }
-        filteredSentence.append(ch)
-        if ch == "d"{
-            break
+        print(surname)
+        
+        guard let age = person["Age"] else {
+            print("La edad es desconocida")
+            return
         }
+        print("La edad de la persona es \(age)")
     }
-    print(filteredSentence)
-}
-
-func fallthroughSentence() -> Void {
-    let integerToDescribe = 5
-    var description = "El numero \(integerToDescribe) es: "
-    switch integerToDescribe {
-    case 2,3,5,7,11,13,17,19:
-        description += " un numero primo y"
-        fallthrough
-    default:
-        description += " un numero entero"
-    }
-    print(description)
+    people["surname"] = "Realpe"
+    testUserValidation(person: people)
 }
 
 
