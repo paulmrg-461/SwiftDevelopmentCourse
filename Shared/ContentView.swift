@@ -19,15 +19,33 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-func switchCompound() -> Void {
-    let anotherPoint = (0,9)
-    
-    switch anotherPoint {
-    case (let distance, 0), (0, let distance):
-        print("Se encuentra sobre el eje, a distancia \(distance) del origen.")
-    default:
-        print("No se encuentra sobre el eje")
+func continueSentence() -> Void {
+    let sentence = "Las mentes grandes piensan igual."
+    var filteredSentence = ""
+    let charactersToRemove:[Character] = ["a","e","i","o","u"]
+    for ch in sentence {
+        if charactersToRemove.contains(ch){
+            continue
+        }
+        filteredSentence.append(ch)
     }
+    print(filteredSentence)
+}
+
+func breakSentence() -> Void {
+    let sentence = "Las mentes grandes piensan igual."
+    var filteredSentence = ""
+    let charactersToRemove:[Character] = ["a","e","i","o","u"]
+    for ch in sentence {
+        if charactersToRemove.contains(ch){
+            continue
+        }
+        filteredSentence.append(ch)
+        if ch == "d"{
+            break
+        }
+    }
+    print(filteredSentence)
 }
 
 
