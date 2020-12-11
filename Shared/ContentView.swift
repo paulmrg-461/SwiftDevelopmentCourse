@@ -48,4 +48,17 @@ func breakSentence() -> Void {
     print(filteredSentence)
 }
 
+func fallthroughSentence() -> Void {
+    let integerToDescribe = 5
+    var description = "El numero \(integerToDescribe) es: "
+    switch integerToDescribe {
+    case 2,3,5,7,11,13,17,19:
+        description += " un numero primo y"
+        fallthrough
+    default:
+        description += " un numero entero"
+    }
+    print(description)
+}
+
 
